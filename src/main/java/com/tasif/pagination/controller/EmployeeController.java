@@ -52,4 +52,10 @@ public class EmployeeController {
 		List<Employee> list = employeeService.getAllEmployees(pageNo, pageSize, sortBy);
 		return new ResponseEntity<List<Employee>>(list, HttpStatus.OK);
 	}
+	
+	@GetMapping("/{employeeId}")
+	public ResponseEntity<Employee> getEmployee(@PathVariable long employeeId) {
+		Employee response = employeeService.getEmployee(employeeId);
+		return new ResponseEntity<Employee>(response, HttpStatus.OK);
+	}
 }

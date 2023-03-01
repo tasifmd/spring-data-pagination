@@ -63,4 +63,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 	}
 
+	@Override
+	public Employee getEmployee(long employeeId) {
+		// TODO Auto-generated method stub
+		return employeeRepository.findById(employeeId).orElseThrow(()->new RuntimeException("User doesn't exist"));
+	}
+
 }
